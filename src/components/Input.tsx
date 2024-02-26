@@ -10,7 +10,7 @@ const Input: React.FC<InputProps> = ({ onChange }) => {
       name="main_input"
       type="text"
       className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-      placeholder="Check text"
+      placeholder="Search for country"
       onChange={onChange}
     />
   );
