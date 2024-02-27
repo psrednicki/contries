@@ -4,7 +4,7 @@ import debounce from "lodash/debounce";
 const TextToSpeech: React.FC = () => {
   const [text, setText] = useState<string>("");
   const [isSpeaking, setIsSpeaking] = useState<boolean>(false);
-  const [rate, setRate] = useState<number>(1.0); // Domyślna prędkość czytania
+  const [rate, setRate] = useState<number>(1.0);
 
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
@@ -16,7 +16,7 @@ const TextToSpeech: React.FC = () => {
     if ("speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance(textToSpeak);
       utteranceRef.current = utterance;
-      utterance.rate = rate; // Ustawienie prędkości czytania
+      utterance.rate = rate;
       window.speechSynthesis.speak(utterance);
       setIsSpeaking(true);
     } else {
@@ -67,24 +67,24 @@ const TextToSpeech: React.FC = () => {
         onClick={handleSpeak}
         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2"
       >
-        Czytaj
+        Read
       </button>
       <button
         onClick={handlePause}
         className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mr-2"
         disabled={!isSpeaking}
       >
-        Pauza
+        Pause
       </button>
       <button
         onClick={handleResume}
         className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2"
         disabled={isSpeaking}
       >
-        Wznów
+        Resume
       </button>
       <label className="flex items-center py-4">
-        Prędkość odczytu:
+        Speed:
         <input
           type="number"
           step="0.1"
