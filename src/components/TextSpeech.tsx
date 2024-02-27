@@ -55,7 +55,7 @@ const TextToSpeech: React.FC = () => {
   };
 
   return (
-    <div className="p-4 mx-2 bg-gray-200 rounded-lg shadow-lg">
+    <div className="p-4 mx-2 bg-gray-200 rounded-lg shadow-lg max-w-md">
       <input
         type="text"
         value={text}

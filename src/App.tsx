@@ -5,7 +5,7 @@ import { Country, fetchApiList } from "./utils/api";
 import Input from "./components/Input";
 import InfoBox from "./components/InfoBox";
 import _debounce from "lodash/debounce";
-import TextToSpeech from "./pages/TextSpeech";
+import TextToSpeech from "./components/TextSpeech";
 
 const App: React.FC = () => {
   const [countires, setCountires] = useState<Country[]>([]);
